@@ -1,0 +1,27 @@
+.profile {
+  right: 0;
+  top: $spacing/2;
+  text-align: right;
+
+  img { width: 30px; }
+
+  &.signed-in img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .inner {
+    padding-right: $spacing;
+  }
+
+  h6 {
+    color: $neutral-70;
+    line-height: 1;
+    margin-top: -$spacing/4;
+    font-weight: bold;
+  }
+
+  a:hover .sign-in {
+    color: $neutral-30;
+  }
+}

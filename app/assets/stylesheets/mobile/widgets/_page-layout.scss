@@ -1,0 +1,12 @@
+body {
+  background: $neutral-40;
+}
+
+.page-element {
+  margin-top: $spacing;
+  @include box-shadow($darkest-color 0 0 $spacing);
+}
+
+.content {
+  background: $lightest-color image-url("wavegrid.png");
+}

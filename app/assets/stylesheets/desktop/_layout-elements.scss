@@ -1,0 +1,9 @@
+#page {
+  max-width: $desktop-break-point + 64px; // gets this to 1024 even though breakpoint is smaller
+}
+
+#header {
+  .inner {
+    padding: 10px;
+  }
+}

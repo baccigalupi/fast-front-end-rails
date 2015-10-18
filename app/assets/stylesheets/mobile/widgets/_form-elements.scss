@@ -1,0 +1,109 @@
+.input-container {
+  margin-top: $input-top-padding + $input-border-width + $shadow-padding/2;
+  margin-bottom: $input-top-padding;
+  margin-right: $input-side-padding + $shadow-padding/2;
+  margin-left: $input-side-padding;
+}
+
+.input,
+input[type=text],
+input[type=password],
+input[type=email],
+textarea {
+  // overrides that should be in reset/normalize
+  @include input-strip-native;
+  @include line;
+  @include input-margin-fix;
+  @include border-radius;
+  @include bordered;
+  @include box-shadow(inset 0px $input-border-width-special $input-border-width-special $neutral-20);
+
+  background-color: $lightest-color;
+  font-size: $em;
+  color: $darkest-color;
+  padding: $input-top-padding  $input-side-padding;
+
+  &:focus {
+    @include focus-input-padding-fix;
+    border: $input-border-width-special solid lighten($primary, 30%);
+    @include box-shadow(inset 0px $input-border-width-special*1.5 $input-border-width-special*1.5 $neutral-20);
+  }
+}
+
+input[type=checkbox] {
+  -webkit-appearance: checkbox;
+}
+input[type=radio] {
+  -webkit-appearance: radio;
+}
+
+textarea {
+  min-height: 100px;
+  overflow-y: scroll;
+}
+@-moz-document url-prefix() {
+  textarea {
+    font-family: $body-font;
+  }
+}
+
+input[disabled],
+input.disabled,
+textarea[disabled],
+textarea.disabled {
+  background-color: $neutral-10;
+  color: $neutral-50;
+}
+
+form {
+  .error-message {
+    display: none;
+  }
+
+  .error {
+    .error-message {
+      display: block;
+      color: $error-dark;
+    }
+
+    .file-input {
+      border: $input-border-width solid $error;
+    }
+
+    input[type=text],
+    input[type=password],
+    input[type=email],
+    textarea {
+      border: $input-border-width-special solid $error;
+      @include focus-input-padding-fix;
+
+      &:focus {
+        @include focus-input-padding-fix;
+        border: $input-border-width-special solid $primary;
+      }
+    }
+  }
+}
+
+select {
+  @include line;
+  @include input-strip-native;
+  @include bordered;
+  @include border-radius;
+  @include box-shadow(0px $input-border-width-special*1.5 $input-border-width-special*1.5 $neutral-20);
+
+  -webkit-padding-end: $input-side-padding + 20;
+  -moz-padding-end: $input-side-padding + 20;
+  -webkit-padding-start: $input-side-padding;
+  -moz-padding-start: $input-side-padding;
+  padding-top: $input-side-padding - 4;
+  padding-bottom: $input-side-padding - 3;
+
+  color: $darkest-color;
+
+  background: $lightest-color image_url('dropdown-arrow.png') no-repeat right center;
+
+  font-size: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

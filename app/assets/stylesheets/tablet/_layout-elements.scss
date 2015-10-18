@@ -1,0 +1,17 @@
+#page {
+  margin: 0 auto;
+}
+
+.page-element {
+  margin: 0 $spacing $spacing $spacing;
+}
+
+#header {
+  height: 60px;
+
+  .inner { padding: 7px 10px; }
+}
+
+.dialog-container {
+  width: 50%;
+}

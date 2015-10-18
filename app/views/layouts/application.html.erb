@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sort It</title>
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/ico">
+  <link rel="icon" href="/favicon.ico" type="image/ico">
+
+  <meta name="viewport" content="initial-scale=1">
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+
+  <link href='http://fonts.googleapis.com/css?family=Port+Lligat+Slab' rel='stylesheet' type='text/css'>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="page" class="row">
+    <div id='header' class='page-element'>
+      <div class='inner'>
+        <h1 class='unit'>Sort It</h1>
+        <div class='spacer unit'></div>
+        <h2 class='unit'>It does something</h2>
+      </div>
+    </div>
+    <%= yield %>
+  </div>
+  <%# render(partial: '/layouts/google_analytics') if Rails.env == 'production' %>
+</body>
+</html>
+
