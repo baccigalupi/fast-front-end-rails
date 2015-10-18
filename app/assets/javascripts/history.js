@@ -1,9 +1,13 @@
 Helm.History = Helm.BaseClass.extend({
   initialize: function() {
     this.list = [];
-    Backbone.history.start();
-
     this.init(arguments);
+  },
+
+  start: function() {
+    if (this.started) { return; }
+    Backbone.history.start();
+    this.started = true;
   },
 
   listenTo: function(router) {

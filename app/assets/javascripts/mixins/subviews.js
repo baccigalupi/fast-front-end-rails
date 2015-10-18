@@ -14,9 +14,9 @@ Helm.Mixins.Subviews = {
   },
 
   unpackApp: function(app) {
-    app || (app = {});
+    app || (app = {constructor: {}});
     this.repository = app.repository;
-    this.templates =  app.Templates;
+    this.templates =  app.constructor.Templates;
     this.viewModelClasses = app.ViewModels;
   },
 

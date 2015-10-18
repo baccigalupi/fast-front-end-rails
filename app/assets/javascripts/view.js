@@ -62,6 +62,7 @@ Helm.View = Backbone.View.extend(Helm.Mixins.Subviews).extend({
   },
 
   template: function() {
+    if (!this.config.template) { return; }
     return this.templates[_.result(this.config, 'template')];
   },
 
@@ -77,5 +78,5 @@ Helm.View = Backbone.View.extend(Helm.Mixins.Subviews).extend({
   init: function() {},
   subviews: function() { return []; },
   config: {},
-  partials: {},
+  partials: {}
 });

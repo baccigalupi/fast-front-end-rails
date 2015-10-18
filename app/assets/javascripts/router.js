@@ -3,6 +3,8 @@ Helm.Router = Backbone.Router.extend(Helm.Mixins.Subviews).extend({
     this.app = app;
     this.$el = $el;
 
+    this.unpackApp(app);
+
     this.history = this.app.history;
     this.history.listenTo(this);
 

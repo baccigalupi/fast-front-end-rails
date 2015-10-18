@@ -4,10 +4,12 @@ Helm.App = Helm.BaseClass.extend(Helm.Mixins.Subviews).extend({
   },
 
   start: function() {
+    this.loadTemplates();
     this.manageHistory();
     this.router = new (this.routerClass())(this, this.$el);
     this.repository || (this.repository = this.createRepository());
     this.router.repository = this.repository;
+    this.history.start();
     this.render();
   },
 
@@ -36,6 +38,20 @@ Helm.App = Helm.BaseClass.extend(Helm.Mixins.Subviews).extend({
       return new klass();
     }
   },
+
+  loadTemplates: function() {
+    if (this.constructor.RawTemplates) {
+      this.loadRawTemplates();
+    }
+  },
+
+  loadRawTemplates: function() {
+    var templates = this.constructor.Templates;
+    var rawTemplates = this.constructor.RawTemplates
+    _.each(rawTemplates, function(value, key) {
+      templates[key] = Hogan.compile(value);
+    });
+  }
 });
 
 Helm.App.extend = function() {
