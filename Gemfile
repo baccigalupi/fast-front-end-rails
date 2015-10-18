@@ -10,6 +10,8 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'compass-rails'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'active_model_serializers'
+
 group :production, :staging do
   gem 'rails_12factor'
 end
