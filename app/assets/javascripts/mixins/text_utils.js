@@ -8,6 +8,12 @@ Helm.Mixins.TextUtils = {
       });
   },
 
+  littelCamelize: function(word) {
+    return word.replace(/(_\w)/g, function(g) {
+      return g[1].toUpperCase();
+    });
+  },
+
   underscore: function (word) {
     return word
       .replace(/^(\w)/, function(g) {

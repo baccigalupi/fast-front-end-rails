@@ -4,10 +4,10 @@ Helm.Mixins.Subviews = {
 
     _.each(subviews, function (view) {
       if(view) {
-        view.parent = view.parent || this.defaultParent();
-        view.repository = view.repository || this.repository;
-        view.templates =  view.templates  || this.templates;
-        view.viewModelClasses = view.viewModelClasses || this.viewModelClasses;
+        view.parent =           view.parent ||            this.defaultParent();
+        view.repository =       view.repository ||        this.repository;
+        view.templates =        view.templates  ||        this.templates;
+        view.viewModelClasses = view.viewModelClasses ||  this.viewModelClasses;
         view.render();
       }
     }.bind(this));
@@ -17,7 +17,7 @@ Helm.Mixins.Subviews = {
     app || (app = {constructor: {}});
     this.repository = app.repository;
     this.templates =  app.constructor.Templates;
-    this.viewModelClasses = app.ViewModels;
+    this.viewModelClasses = app.constructor.ViewModels;
   },
 
   remove: function() {

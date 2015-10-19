@@ -36,8 +36,7 @@ describe('Helm.View', function() {
       var viewModels = {ViewModelClass: 'hello viewModel'};
       var app = {
         repository: repository,
-        constructor: {Templates: templates},
-        ViewModels: viewModels
+        constructor: {Templates: templates, ViewModels: viewModels}
       }
 
       view = new Helm.View({parent: parent, app: app});

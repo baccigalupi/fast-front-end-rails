@@ -14,7 +14,7 @@ Helm.ViewModel = Helm.BaseClass.extend({
   inclusions: function() {
     var inclusions = {};
     _.each(this.include || [], function(prop) {
-       inclusions[prop] = _.result(this, prop);
+      inclusions[prop] = _.result(this, prop) || _.result(this, Helm.Mixins.TextUtils.littelCamelize(prop));
     }.bind(this));
     return inclusions;
   },

@@ -46,12 +46,12 @@ module Helm
         f.write <<-JS
 #{app_namespace}.Views.#{js_class_name} = Helm.View.extend({
   config: {
-    viewModel: '#{app_namespace}.ViewModels.#{js_class_name}',
+    viewModel: '#{js_class_name}',
     template: '#{view_path}',
     events: {
       // add your usual backbone event hash thingies
     }
-    // parentSelector: '.my-parent-selector'
+    // parentSelector: '.#{view_path.gsub('/', '-')}-container'
   },
 
   className: '#{view_path.gsub('/', '-')}'
