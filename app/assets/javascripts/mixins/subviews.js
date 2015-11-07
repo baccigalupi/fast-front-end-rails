@@ -8,16 +8,10 @@ Helm.Mixins.Subviews = {
         view.repository =       view.repository ||        this.repository;
         view.templates =        view.templates  ||        this.templates;
         view.viewModelClasses = view.viewModelClasses ||  this.viewModelClasses;
+        view.router =           view.router ||            this.router;
         view.render();
       }
     }.bind(this));
-  },
-
-  unpackApp: function(app) {
-    app || (app = {constructor: {}});
-    this.repository = app.repository;
-    this.templates =  app.constructor.Templates;
-    this.viewModelClasses = app.constructor.ViewModels;
   },
 
   remove: function() {

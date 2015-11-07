@@ -8,7 +8,6 @@ Helm.View = Backbone.View.extend(Helm.Mixins.Subviews).extend({
     opts || (opts = {});
     this.config = _.extend(_.clone(this.defaultConfig), this.config);
     this.parent = opts.parent || _.result(this, 'parent');
-    this.unpackApp(opts.app);
   },
 
   defaultConfig: {

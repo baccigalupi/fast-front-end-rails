@@ -61,4 +61,13 @@ Helm.Router = Backbone.Router.extend(Helm.Mixins.Subviews).extend({
   },
 
   init: function() { },
+
+  unpackApp: function(app) {
+    app || (app = {constructor: {}});
+    this.app = app;
+    this.repository = app.repository;
+    this.templates =  app.constructor.Templates;
+    this.viewModelClasses = app.constructor.ViewModels;
+    this.router = this;
+  }
 });

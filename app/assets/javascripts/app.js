@@ -36,6 +36,8 @@ Helm.App = Helm.BaseClass.extend(Helm.Mixins.Subviews).extend({
     klass || (klass = this.Repository);
     if (klass) {
       return new klass();
+    } else {
+      return {};
     }
   },
 
