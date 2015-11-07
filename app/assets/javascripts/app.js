@@ -47,7 +47,7 @@ Helm.App = Helm.BaseClass.extend(Helm.Mixins.Subviews).extend({
 
   loadRawTemplates: function() {
     var templates = this.constructor.Templates;
-    var rawTemplates = this.constructor.RawTemplates
+    var rawTemplates = this.constructor.RawTemplates;
     _.each(rawTemplates, function(value, key) {
       templates[key] = Hogan.compile(value);
     });
