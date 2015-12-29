@@ -28,26 +28,6 @@ describe('Helm.View', function() {
       expect(Helm.View.prototype.init).toHaveBeenCalled();
     });
 
-    it('pulls options from passed in arguments (with an app)', function() {
-      var parent = $('.hello');
-
-      var repository = {hello: 'data'};
-      var templates = {something: '<div>something</div>'};
-      var viewModels = {ViewModelClass: 'hello viewModel'};
-      var app = {
-        repository: repository,
-        constructor: {Templates: templates, ViewModels: viewModels}
-      }
-
-      view = new Helm.View({parent: parent, app: app});
-
-      expect(view.parent).toEqual(parent);
-
-      expect(view.repository).toEqual(repository);
-      expect(view.templates).toEqual(templates);
-      expect(view.viewModelClasses).toEqual(viewModels);
-    });
-
     it('sets a default attach method', function() {
       view = new Helm.View();
       expect(view.config.attach).toEqual('append');

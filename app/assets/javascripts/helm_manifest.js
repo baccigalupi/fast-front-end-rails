@@ -17,4 +17,5 @@
  * = require helm/notifications.js
  * = require helm/router.js
  * = require helm/view_model.js
+ * = require helm/collection_view_model.js
  */
