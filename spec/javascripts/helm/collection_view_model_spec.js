@@ -13,6 +13,20 @@ describe("Helm.CollectionViewModel", function() {
     });
   });
 
+  describe("when using a backbone collection", function() {
+    beforeEach(function() {
+      collection = new Backbone.Collection([{foo: 'foo'}, {bar: 'bar'}]);
+      viewModel = new ViewModelClass(collection);
+
+      json = viewModel.toJSON();
+    });
+
+    it("it can access the stuff", function() {
+      expect(json.collection[0].foo).toEqual('foo');
+      expect(json.collection[1].bar).toEqual('bar');
+    });
+  });
+
   describe("top level key", function() {
     describe("default", function() {
       beforeEach(function() {

@@ -34,7 +34,7 @@ Helm.CollectionViewModel = Helm.BaseClass.extend({
     var base = this.presentedToJSON();
     var inclusions = this.inclusions();
 
-    var merged = _.each(base, function(baseJSON, i) {
+    var merged = _.map(base, function(baseJSON, i) {
       return _.extend(baseJSON, inclusions[i] || {});
     });
 
